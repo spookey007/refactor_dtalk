@@ -1,45 +1,14 @@
-Do at least ONE of the following tasks: refactor is mandatory. Write tests is optional, will be good bonus to see it. 
-Please do not invest more than 2-4 hours on this.
-Upload your results to a Github repo, for easier sharing and reviewing.
-
-Thank you and good luck!
+My thoughts about the code:
 
 
+Upon initial review, the code appears to be functional, but there are areas that could benefit from refactoring to improve readability, maintainability, and adherence to coding best practices. Some specific areas of concern include:
 
-Code to refactor
-=================
-1) app/Http/Controllers/BookingController.php
-2) app/Repository/BookingRepository.php
+1. Lack of separation of concerns: The controller contains both validation logic and database operations. It would be better to move the validation logic to separate request classes to promote better code organization and reusability.
 
-Code to write tests (optional)
-=====================
-3) App/Helpers/TeHelper.php method willExpireAt
-4) App/Repository/UserRepository.php, method createOrUpdate
+2. Use of hardcoded values: Some values, such as email addresses and pagination limits, are hardcoded directly in the code. It would be better to abstract such values to configuration files or constants for easier maintenance and flexibility.
 
+3. Inconsistent naming conventions: The naming conventions used in the code are not consistent. It's important to follow a consistent naming convention for variables, functions, and classes to improve code readability.
 
-----------------------------
+4. Limited error handling: The error handling in the code is minimal, and exceptions are not properly caught and handled. This can lead to unexpected behavior or unhandled exceptions being displayed to users.
 
-What I expect in your repo:
-
-X. A readme with:   Your thoughts about the code. What makes it amazing code. Or what makes it ok code. Or what makes it terrible code. How would you have done it. Thoughts on formatting, structure, logic.. The more details that you can provide about the code (what's terrible about it or/and what is good about it) the easier for us to assess your coding style, mentality etc
-
-And 
-
-Y.  Refactor it if you feel it needs refactoring. The more love you put into it. The easier for us to asses your thoughts, code principles etc
-
-
-IMPORTANT: Make two commits. First commit with original code. Second with your refactor so we can easily trace changes. 
-
-
-NB: you do not need to set up the code on local and make the web app run. It will not run as its not a complete web app. This is purely to assess you thoughts about code, formatting, logic etc
-
-
-===== So expected output is a GitHub link with either =====
-
-1. Readme described above (point X above) + refactored code 
-OR
-2. Readme described above (point X above) + refactored core + a unit test of the code that we have sent
-
-Thank you!
-
-
+5. Seprate repository should be created like both users and jobs models are direclty used in BookingRepository seprating the repositories will result in clear and consice code easy to read and understand.
